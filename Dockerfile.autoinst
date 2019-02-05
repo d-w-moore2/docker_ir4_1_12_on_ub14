@@ -17,11 +17,11 @@ RUN service postgresql start && su - postgres -c "psql -f /db_commands.txt" && \
     apt install -y -f ; \
     service postgresql stop
 
-ADD run_irods_4_1.sh /run_irods_4_1.sh 
+ADD run_irods.sh /run_irods.sh 
 ADD wget_ir4_1_12_pkgs.sh /wget_ir4_1_12_pkgs.sh
 
 WORKDIR /
 
-RUN chmod u+x /run_irods_4_1.sh /wget_ir4_1_12_pkgs.sh
+RUN chmod u+x /run_irods.sh /wget_ir4_1_12_pkgs.sh
 
 CMD [ "/bin/bash" ]
